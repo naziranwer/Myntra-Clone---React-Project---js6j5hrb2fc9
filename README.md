@@ -28,11 +28,11 @@ A Myntra clone web application built with React and Vite, featuring search, filt
    cd myntra-clone
    ```
 
-2. Install dependencies:
+2. Install dependencies: npm install
 
 ## Usage
 
-1. Run the development server:
+1. Run the development server: npm run dev
 
 2. Open your browser and navigate to `http://127.0.0.1:5174/` to view the app.
 
