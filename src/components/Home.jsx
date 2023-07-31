@@ -59,6 +59,9 @@ const Home = () => {
           </Grid>
         </Box>
       </Grid>
+      <br />
+      <br />
+      <br />
 
       <Footer />
     </div>

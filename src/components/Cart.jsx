@@ -75,30 +75,23 @@ const Cart = () => {
   return (
     <>
       {/* <NavBar /> */}
-      <div>
-        {name && <p>Wellcome {localStorage.getItem("name")}</p>}
-
-        <button onClick={logout} className="logout">
-          LogOut
-        </button>
-      </div>
-
       <div className="cart">
         <Typography variant="h2" sx={{ textAlign: "center" }}>
           My Cart
         </Typography>
+        <br />
         {cartItems.length === 0 ? (
           <Typography
             variant="body1"
             sx={{ justifyContent: "center", textAlign: "center" }}
           >
             Your cart is empty. Go to{" "}
-            <button
+            <Button
               onClick={() => navigate("/")}
-              style={{ backgroundColor: "E4135c" }}
+              style={{ backgroundColor: "#E4135c", color: "white" }}
             >
               HOME
-            </button>
+            </Button>
           </Typography>
         ) : (
           <Box sx={{ display: "flex" }}>
@@ -198,6 +191,24 @@ const Cart = () => {
                     </Paper>
                   </Grid>
                 ))}
+                {Array.from({ length: 5 - (cartItems.length % 5) }).map(
+                  (_, index) => (
+                    <Grid
+                      item
+                      xs={12}
+                      sm={6}
+                      md={4}
+                      key={`empty-${index}`}
+                      sx={{
+                        marginBottom: "10px",
+                        display: "flex",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <div style={{ width: "100%", height: 1 }} />
+                    </Grid>
+                  )
+                )}
               </Grid>
             </Box>
             {/* Right Column: Checkout Box */}
@@ -253,6 +264,7 @@ const Cart = () => {
                   color="primary"
                   sx={{ width: "100%", mt: 3 }}
                   onClick={() => setOpenModal(true)}
+                  style={{ backgroundColor: "#E4135c" }}
                 >
                   Proceed to Checkout
                 </Button>
